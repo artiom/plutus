@@ -22,8 +22,6 @@ module Plutus
   #
   # @author Michael Bulat
   class Transaction < ActiveRecord::Base
-    attr_accessible :description, :commercial_document
-
     belongs_to :commercial_document, :polymorphic => true
     has_many :credit_amounts, :extend => AmountsExtension
     has_many :debit_amounts, :extend => AmountsExtension
@@ -42,7 +40,7 @@ module Plutus
     #   transaction = Plutus::Transaction.build(
     #     description: "Sold some widgets",
     #     debits: [
-    #       {account: "Accounts Receivable", amount: 50}], 
+    #       {account: "Accounts Receivable", amount: 50}],
     #     credits: [
     #       {account: "Sales Revenue", amount: 45},
     #       {account: "Sales Tax Payable", amount: 5}])
