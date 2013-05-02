@@ -11,7 +11,6 @@ module Plutus
   #
   # @author Michael Bulat
   class TransactionsController < ApplicationController
-    unloadable
     # @example
     #   GET /transactions
     #   GET /transactions.xml
